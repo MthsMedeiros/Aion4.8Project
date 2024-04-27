@@ -17,6 +17,7 @@ import com.aionemu.gameserver.dataholders.DataManager;
 import com.aionemu.gameserver.model.PlayerClass;
 import com.aionemu.gameserver.model.Race;
 import com.aionemu.gameserver.model.gameobjects.Item;
+import com.aionemu.gameserver.model.gameobjects.player.Equipment;
 import com.aionemu.gameserver.model.gameobjects.player.Player;
 import com.aionemu.gameserver.model.skill.PlayerSkillEntry;
 import com.aionemu.gameserver.model.skill.PlayerSkillList;
@@ -96,18 +97,21 @@ public class SkillLearnService {
      * @param playerRace
      */
     private static void addSkills(Player player, int level, PlayerClass playerClass, Race playerRace) {
+
         SkillLearnTemplate[] skillTemplates = DataManager.SKILL_TREE_DATA.getTemplatesFor(playerClass, level, playerRace);
         PlayerSkillList playerSkillList = player.getSkillList();
-        for (Item item : player.getEquipment().getEquippedItemsAllStigma()) {
+        if (!(player.getEquipment() == null)) {
+            for (Item item : player.getEquipment().getEquippedItemsAllStigma()) {
 
-            Stigma stigmaInfo = item.getItemTemplate().getStigma();
-            List<Stigma.StigmaSkill> list = stigmaInfo.getSkills();
-            for (Stigma.StigmaSkill stigmaSkill : list) {
-                SkillLearnTemplate[] sk = DataManager.SKILL_TREE_DATA.getTemplatesForSkill(stigmaSkill.getSkillId());
+                Stigma stigmaInfo = item.getItemTemplate().getStigma();
+                List<Stigma.StigmaSkill> list = stigmaInfo.getSkills();
+                for (Stigma.StigmaSkill stigmaSkill : list) {
+                    SkillLearnTemplate[] sk = DataManager.SKILL_TREE_DATA.getTemplatesForSkill(stigmaSkill.getSkillId());
 
-                for (SkillLearnTemplate skillLearnTemplate : sk) {
-                    if (player.getLevel() >= skillLearnTemplate.getMinLevel()) {
-                        playerSkillList.addStigmaSkill(player, stigmaSkill.getSkillId(), skillLearnTemplate.getSkillLevel());
+                    for (SkillLearnTemplate skillLearnTemplate : sk) {
+                        if (player.getLevel() >= skillLearnTemplate.getMinLevel()) {
+                            playerSkillList.addStigmaSkill(player, stigmaSkill.getSkillId(), skillLearnTemplate.getSkillLevel());
+                        }
                     }
                 }
             }
