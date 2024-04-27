@@ -220,6 +220,8 @@ public class StigmaService {
      * @param player
      */
     public static void onPlayerLogin(Player player) {
+
+
         List<Item> equippedItems = player.getEquipment().getEquippedItemsAllStigma();
         List<Integer> equippedStigmaId =  player.getEquipment().getEquippedItemsAllStigmaIds();
         for (Item item : equippedItems) { // All Equipped Items are Stigmas
@@ -230,7 +232,16 @@ public class StigmaService {
                     log.warn("Stigma info missing for item: " + item.getItemTemplate().getTemplateId());
                     return;
                 }
-                player.getSkillList().addStigmaSkill(player, stigmaInfo.getSkills(), false);
+                for(Stigma.StigmaSkill st : stigmaInfo.getSkills()){
+                    SkillLearnTemplate[] sk = DataManager.SKILL_TREE_DATA.getTemplatesForSkill(st.getSkillId());
+
+                    for(SkillLearnTemplate skillLearnTemplate : sk){
+                        if (player.getLevel() >= skillLearnTemplate.getMinLevel()) {
+                            player.getSkillList().addStigmaSkill(player, st.getSkillId(), skillLearnTemplate.getSkillLevel());
+                        }
+                    }
+                }
+
             }
         }
 
