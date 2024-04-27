@@ -12,8 +12,13 @@
  */
 package com.aionemu.gameserver.services;
 
+import java.util.ArrayList;
 import java.util.List;
 
+import com.aionemu.gameserver.dataholders.SkillTreeData;
+import com.aionemu.gameserver.skillengine.model.SkillLearnTemplate;
+import com.aionemu.gameserver.skillengine.model.SkillTemplate;
+import com.aionemu.gameserver.taskmanager.parallel.ForEach;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -58,7 +63,7 @@ public class StigmaService {
      * @param slot
      * @return
      */
-    public static boolean notifyEquipAction(Player player, Item resultItem, long slot) {
+    public static boolean notifyEquipAction(final Player player, Item resultItem, long slot) {
         if (resultItem.getItemTemplate().isStigma()) {
             if (ItemSlot.isRegularStigma(slot)) {
                 // check the number of stigma wearing
@@ -108,7 +113,18 @@ public class StigmaService {
                 return false;
             }
 
-            player.getSkillList().addStigmaSkill(player, stigmaInfo.getSkills(), true);
+            List<StigmaSkill> listSkill = stigmaInfo.getSkills();
+            List<StigmaSkill> skillsToKeep = new ArrayList<>(listSkill);
+            for (StigmaSkill stigmaSkill : listSkill) {
+                SkillLearnTemplate[] sk = DataManager.SKILL_TREE_DATA.getTemplatesForSkill(stigmaSkill.getSkillId());
+                int minLeveLSkill = sk[0].getMinLevel();
+                if (player.getLevel() < minLeveLSkill) {
+                    skillsToKeep.remove(stigmaSkill);
+                }
+            }
+            listSkill.clear();
+            listSkill.addAll(skillsToKeep);
+            player.getSkillList().addStigmaSkill(player, listSkill, true);
 
             List<Integer> sStigma = player.getEquipment().getEquippedItemsAllStigmaIds();
             sStigma.add(resultItem.getItemId()); // The last item ur about to add is not in getEquippedItemsAllStigma , so adding manual
