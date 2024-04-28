@@ -128,6 +128,8 @@ public class SkillLearnService {
                 playerSkillList.addSkill(player, template.getSkillId(), template.getSkillLevel());
             }
         }
+        List<Integer> sStigma = player.getEquipment().getEquippedItemsAllStigmaIds();
+        StigmaService.checkForLinkStigmaAvailable(player,sStigma);
     }
 
     /**

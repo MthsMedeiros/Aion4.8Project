@@ -6,8 +6,8 @@
  *  ADev.Team Website: <ADevelopers.ru>
  *  Main developers of the project: MATTY, Yltramarine
  *
- *  iMPERIVM Emu Engine - Closed Development. 
- *  Publication of Files in WEB is prohibited. 
+ *  iMPERIVM Emu Engine - Closed Development.
+ *  Publication of Files in WEB is prohibited.
  *
  */
 package com.aionemu.gameserver.services;
@@ -16,9 +16,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.aionemu.gameserver.dataholders.SkillTreeData;
+import com.aionemu.gameserver.model.skill.PlayerSkillEntry;
+import com.aionemu.gameserver.model.skill.PlayerSkillList;
+import com.aionemu.gameserver.model.skill.SkillList;
 import com.aionemu.gameserver.skillengine.model.SkillLearnTemplate;
 import com.aionemu.gameserver.skillengine.model.SkillTemplate;
 import com.aionemu.gameserver.taskmanager.parallel.ForEach;
+import gnu.trove.map.hash.TIntObjectHashMap;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -57,6 +61,7 @@ public class StigmaService {
      }
      return false;
      }*/
+
     /**
      * @param player
      * @param resultItem
@@ -109,7 +114,7 @@ public class StigmaService {
                 return false;
             }
 
-            if (!player.getInventory().tryDecreaseKinah(kinahCount)){
+            if (!player.getInventory().tryDecreaseKinah(kinahCount)) {
                 return false;
             }
 
@@ -131,24 +136,7 @@ public class StigmaService {
 
             checkForLinkStigmaAvailable(player, sStigma);
 
-            /*int neededSkillsCount = stigmaInfo.getRequireSkill().size();
-             for (RequireSkill rs : stigmaInfo.getRequireSkill()) {
-             for (int id : rs.getSkillIds()) {
-             if (player.getSkillList().isSkillPresent(id)) {
-             neededSkillsCount--;
-             break;
-             }
-             }
-             }
-             if (neededSkillsCount != 0) {
-             AuditLogger.info(player, "Possible client hack advenced stigma skill.");
-             return false;
-             }
 
-             if (!player.getInventory().decreaseByItemId(182400001, kinahCount)) {
-             return false;
-             }
-             player.getSkillList().addStigmaSkill(player, stigmaInfo.getSkills(), true);*/
         }
         return true;
     }
@@ -193,7 +181,12 @@ public class StigmaService {
                 // remove skill
                 System.out.println(player.getLinkedSkill());
                 if ((player.getEquipment().getEquippedItemsRegularStigma().size() < 6) && (player.getLinkedSkill() != 0)) {
-                    SkillLearnService.removeLinkedSkill(player, player.getLinkedSkill());
+                    PlayerSkillList listLinkedSkill = player.getSkillList();
+                    for(PlayerSkillEntry lls : listLinkedSkill.getLinkedSkills()){
+                        if(lls.isLinked()){
+                            SkillLearnService.removeLinkedSkill(player, lls.getSkillId());
+                        }
+                    }
                     SkillLearnService.removeSkill(player, player.getLinkedSkill());
                     SkillLearnService.removeSkill(player, sSkill.getSkillId());
                     player.setLinkedSkill(0);
@@ -223,7 +216,7 @@ public class StigmaService {
 
 
         List<Item> equippedItems = player.getEquipment().getEquippedItemsAllStigma();
-        List<Integer> equippedStigmaId =  player.getEquipment().getEquippedItemsAllStigmaIds();
+        List<Integer> equippedStigmaId = player.getEquipment().getEquippedItemsAllStigmaIds();
         for (Item item : equippedItems) { // All Equipped Items are Stigmas
             if (item.getItemTemplate().isStigma()) {
                 Stigma stigmaInfo = item.getItemTemplate().getStigma();
@@ -232,10 +225,10 @@ public class StigmaService {
                     log.warn("Stigma info missing for item: " + item.getItemTemplate().getTemplateId());
                     return;
                 }
-                for(Stigma.StigmaSkill st : stigmaInfo.getSkills()){
+                for (StigmaSkill st : stigmaInfo.getSkills()) {
                     SkillLearnTemplate[] sk = DataManager.SKILL_TREE_DATA.getTemplatesForSkill(st.getSkillId());
 
-                    for(SkillLearnTemplate skillLearnTemplate : sk){
+                    for (SkillLearnTemplate skillLearnTemplate : sk) {
                         if (player.getLevel() >= skillLearnTemplate.getMinLevel()) {
                             player.getSkillList().addStigmaSkill(player, st.getSkillId(), skillLearnTemplate.getSkillLevel());
                         }
@@ -263,20 +256,7 @@ public class StigmaService {
                     continue;
                 }
 
-                /*int needSkill = stigmaInfo.getRequireSkill().size();
-                 for (RequireSkill rs : stigmaInfo.getRequireSkill()) {
-                 for (int id : rs.getSkillIds()) {
-                 if (player.getSkillList().isSkillPresent(id)) {
-                 needSkill--;
-                 break;
-                 }
-                 }
-                 }
-                 if (needSkill != 0) {
-                 AuditLogger.info(player, "Possible client hack advenced stigma skill.");
-                 player.getEquipment().unEquipItem(item.getObjectId(), 0);
-                 continue;
-                 }*/
+
                 if (item.getItemTemplate().isClassSpecific(player.getCommonData().getPlayerClass()) == false) {
                     AuditLogger.info(player, "Possible client hack not valid for class.");
                     player.getEquipment().unEquipItem(item.getObjectId(), 0);
@@ -473,9 +453,9 @@ public class StigmaService {
     public static void checkForLinkStigmaAvailable(Player player, List<Integer> sStigma) {
         boolean hasInert = false;
 
-        for (Integer in : sStigma){ // if Inert Stigma socketed, Cannot get Link
+        for (Integer in : sStigma) { // if Inert Stigma socketed, Cannot get Link
             ItemTemplate it = DataManager.ITEM_DATA.getItemTemplate(in);
-            if (it.getName().contains("(Inert)")){
+            if (it.getName().contains("(Inert)")) {
                 hasInert = true;
             }
         }
@@ -535,9 +515,24 @@ public class StigmaService {
                 return;
             case SORCERER:
                 if ((sStigma.size() == 6) && !hasInert) {
+
+
                     if (((sStigma.contains(140001191)) && (sStigma.contains(140001174)) && ((sStigma.contains(140001181))
                             || (sStigma.contains(140001178)))) || ((sStigma.contains(140001181)) && (sStigma.contains(140001178)))) {
-                        player.getSkillList().addLinkedSkill(player, 1340, 1);
+                        List<SkillLearnTemplate[]> listSKT = new ArrayList<>();
+                        listSKT.add(DataManager.SKILL_TREE_DATA.getTemplatesForSkill(1340));
+                        listSKT.add(DataManager.SKILL_TREE_DATA.getTemplatesForSkill(1341));
+                        listSKT.add(DataManager.SKILL_TREE_DATA.getTemplatesForSkill(1342));
+                        for(SkillLearnTemplate[] skf : listSKT){
+                            for (int i = 0; i < skf.length; i++) {
+                                if(player.getLevel() >= skf[i].getMinLevel()){
+                                    player.getSkillList().addLinkedSkill(player, skf[i].getSkillId(), skf[i].getSkillLevel());
+                                }
+                            }
+                            
+                        }
+                        
+
                     } else if (((sStigma.contains(140001192)) && (sStigma.contains(140001176)) && ((sStigma.contains(140001177))
                             || (sStigma.contains(140001184)))) || ((sStigma.contains(140001177)) && (sStigma.contains(140001184)))) {
                         player.getSkillList().addLinkedSkill(player, 1540, 1);
