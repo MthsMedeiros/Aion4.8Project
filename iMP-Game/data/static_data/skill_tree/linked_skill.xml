@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<linked_skill>
+    <skill minLevel="55" race="PC_ALL" stigma="true" name="Repulsion Field" skillLevel="1" skillId="1418" classId="SORCERER" />
+    <skill minLevel="59" race="PC_ALL" stigma="true" name="Repulsion Field" skillLevel="1" skillId="1419" classId="SORCERER" />
+    <skill minLevel="63" race="PC_ALL" stigma="true" name="Repulsion Field" skillLevel="1" skillId="1420" classId="SORCERER" />
+    <skill minLevel="55" race="PC_ALL" stigma="true" name="Slumberswept Wind" skillLevel="1" skillId="1340" classId="SORCERER" />
+    <skill minLevel="59" race="PC_ALL" stigma="true" name="Slumberswept Wind" skillLevel="1" skillId="1341" classId="SORCERER" />
+    <skill minLevel="63" race="PC_ALL" stigma="true" name="Slumberswept Wind" skillLevel="1" skillId="1342" classId="SORCERER" />
+    <skill minLevel="55" race="PC_ALL" stigma="true" name="Aetherblaze" skillLevel="1" skillId="1540" classId="SORCERER" />
+    <skill minLevel="59" race="PC_ALL" stigma="true" name="Aetherblaze" skillLevel="1" skillId="1541" classId="SORCERER" />
+    <skill minLevel="63" race="PC_ALL" stigma="true" name="Aetherblaze" skillLevel="1" skillId="1542" classId="SORCERER" />
+    <skill minLevel="55" race="PC_ALL" stigma="true" name="Unraveling Assault" skillLevel="1" skillId="641" classId="GLADIATOR" />
+    <skill minLevel="59" race="PC_ALL" stigma="true" name="Unraveling Assault" skillLevel="1" skillId="642" classId="GLADIATOR" />
+    <skill minLevel="63" race="PC_ALL" stigma="true" name="Unraveling Assault" skillLevel="1" skillId="643" classId="GLADIATOR" />
+    <skill minLevel="55" race="PC_ALL" stigma="true" name="Wind Lance" skillLevel="1" skillId="727" classId="GLADIATOR" />
+    <skill minLevel="59" race="PC_ALL" stigma="true" name="Wind Lance" skillLevel="1" skillId="729" classId="GLADIATOR" />
+    <skill minLevel="63" race="PC_ALL" stigma="true" name="Wind Lance" skillLevel="1" skillId="731" classId="GLADIATOR" />
+    <skill minLevel="55" race="ASMODIANS" stigma="true" name="Battle Banner" skillLevel="1" skillId="657" classId="GLADIATOR" />
+    <skill minLevel="59" race="ASMODIANS" stigma="true" name="Battle Banner" skillLevel="1" skillId="659" classId="GLADIATOR" />
+    <skill minLevel="63" race="ASMODIANS" stigma="true" name="Battle Banner" skillLevel="1" skillId="661" classId="GLADIATOR" />
+    <skill minLevel="55" race="PC_ALL" stigma="true" name="Invigorating Strike" skillLevel="1" skillId="2919" classId="TEMPLAR" />
+    <skill minLevel="59" race="PC_ALL" stigma="true" name="Invigorating Strike" skillLevel="1" skillId="2920" classId="TEMPLAR" />
+    <skill minLevel="63" race="PC_ALL" stigma="true" name="Invigorating Strike" skillLevel="1" skillId="2921" classId="TEMPLAR" />
+    <skill minLevel="55" race="PC_ALL" stigma="true" name="Shield of Vengeance" skillLevel="1" skillId="2918" classId="TEMPLAR" />
+    <skill minLevel="55" race="PC_ALL" stigma="true" name="Eternal Denial" skillLevel="1" skillId="2915" classId="TEMPLAR" />
+    <skill minLevel="59" race="PC_ALL" stigma="true" name="Eternal Denial" skillLevel="1" skillId="2916" classId="TEMPLAR" />
+    <skill minLevel="63" race="PC_ALL" stigma="true" name="Eternal Denial" skillLevel="1" skillId="2917" classId="TEMPLAR" />
+    <skill minLevel="55" race="PC_ALL" stigma="true" name="Fangdrop Stab" skillLevel="1" skillId="3239" classId="ASSASSIN" />
+    <skill minLevel="59" race="PC_ALL" stigma="true" name="Fangdrop Stab" skillLevel="1" skillId="3240" classId="ASSASSIN" />
+    <skill minLevel="63" race="PC_ALL" stigma="true" name="Fangdrop Stab" skillLevel="1" skillId="3241" classId="ASSASSIN" />
+    <skill minLevel="55" race="PC_ALL" stigma="true" name="Explosive Rebranding" skillLevel="1" skillId="3242" classId="ASSASSIN" />
+    <skill minLevel="59" race="PC_ALL" stigma="true" name="Explosive Rebranding" skillLevel="1" skillId="3243" classId="ASSASSIN" />
+    <skill minLevel="63" race="PC_ALL" stigma="true" name="Explosive Rebranding" skillLevel="1" skillId="3244" classId="ASSASSIN" />
+    <skill minLevel="55" race="PC_ALL" stigma="true" name="Shimmerbomb" skillLevel="1" skillId="3236" classId="ASSASSIN" />
+    <skill minLevel="59" race="PC_ALL" stigma="true" name="Shimmerbomb" skillLevel="1" skillId="3237" classId="ASSASSIN" />
+    <skill minLevel="63" race="PC_ALL" stigma="true" name="Shimmerbomb" skillLevel="1" skillId="3238" classId="ASSASSIN" />
+    <skill minLevel="55" race="PC_ALL" stigma="true" name="Ripthread Shot" skillLevel="1" skillId="1006" classId="RANGER" />
+    <skill minLevel="59" race="PC_ALL" stigma="true" name="Ripthread Shot" skillLevel="1" skillId="1007" classId="RANGER" />
+    <skill minLevel="63" race="PC_ALL" stigma="true" name="Ripthread Shot" skillLevel="1" skillId="1008" classId="RANGER" />
+    <skill minLevel="55" race="PC_ALL" stigma="true" name="Night Haze" skillLevel="1" skillId="936" classId="RANGER" />
+    <skill minLevel="59" race="PC_ALL" stigma="true" name="Night Haze" skillLevel="1" skillId="937" classId="RANGER" />
+    <skill minLevel="63" race="PC_ALL" stigma="true" name="Night Haze" skillLevel="1" skillId="938" classId="RANGER" />
+    <skill minLevel="55" race="ELYOS" stigma="true" name="Staggering Trap" skillLevel="1" skillId="1061" classId="RANGER" />
+    <skill minLevel="59" race="ELYOS" stigma="true" name="Staggering Trap" skillLevel="1" skillId="1063" classId="RANGER" />
+    <skill minLevel="59" race="ASMODIANS" stigma="true" name="Staggering Trap" skillLevel="1" skillId="1062" classId="RANGER" />
+    <skill minLevel="63" race="ASMODIANS" stigma="true" name="Staggering Trap" skillLevel="1" skillId="1064" classId="RANGER" />
+    <skill minLevel="55" race="PC_ALL" stigma="true" name="Spirit's Empowerment" skillLevel="1" skillId="3541" classId="SPIRIT_MASTER" />
+    <skill minLevel="59" race="PC_ALL" stigma="true" name="Spirit's Empowerment" skillLevel="1" skillId="3542" classId="SPIRIT_MASTER" />
+    <skill minLevel="63" race="PC_ALL" stigma="true" name="Spirit's Empowerment" skillLevel="1" skillId="3543" classId="SPIRIT_MASTER" />
+    <skill minLevel="55" race="PC_ALL" stigma="true" name="Command: Absorb Wounds" skillLevel="1" skillId="3549" classId="SPIRIT_MASTER" />
+    <skill minLevel="55" race="PC_ALL" stigma="true" name="Blood Funnel" skillLevel="1" skillId="3849" classId="SPIRIT_MASTER" />
+    <skill minLevel="59" race="PC_ALL" stigma="true" name="Blood Funnel" skillLevel="1" skillId="3850" classId="SPIRIT_MASTER" />
+    <skill minLevel="63" race="PC_ALL" stigma="true" name="Blood Funnel" skillLevel="1" skillId="3851" classId="SPIRIT_MASTER" />
+    <skill minLevel="55" race="PC_ALL" stigma="true" name="Restoration Relief " skillLevel="1" skillId="3932" classId="CLERIC" />
+    <skill minLevel="59" race="PC_ALL" stigma="true" name="Restoration Relief " skillLevel="1" skillId="3933" classId="CLERIC" />
+    <skill minLevel="63" race="PC_ALL" stigma="true" name="Restoration Relief " skillLevel="1" skillId="3934" classId="CLERIC" />
+    <skill minLevel="55" race="PC_ALL" stigma="true" name="Judge's Edict" skillLevel="1" skillId="4167" classId="CLERIC" />
+    <skill minLevel="59" race="PC_ALL" stigma="true" name="Judge's Edict" skillLevel="1" skillId="4168" classId="CLERIC" />
+    <skill minLevel="63" race="PC_ALL" stigma="true" name="Judge's Edict" skillLevel="1" skillId="4169" classId="CLERIC" />
+    <skill minLevel="55" race="ELYOS" stigma="true" name="Summon Vexing Energy" skillLevel="1" skillId="3906" classId="CLERIC" />
+    <skill minLevel="59" race="ELYOS" stigma="true" name="Summon Vexing Energy" skillLevel="1" skillId="3908" classId="CLERIC" />
+    <skill minLevel="63" race="ELYOS" stigma="true" name="Summon Vexing Energy" skillLevel="1" skillId="3910" classId="CLERIC" />
+    <skill minLevel="55" race="PC_ALL" stigma="true" name="Word of Instigation" skillLevel="1" skillId="1907" classId="CHANTER" />
+    <skill minLevel="59" race="PC_ALL" stigma="true" name="Word of Instigation" skillLevel="1" skillId="1908" classId="CHANTER" />
+    <skill minLevel="63" race="PC_ALL" stigma="true" name="Word of Instigation" skillLevel="1" skillId="1909" classId="CHANTER" />
+    <skill minLevel="55" race="PC_ALL" stigma="true" name="Resonant Strike" skillLevel="1" skillId="1901" classId="CHANTER" />
+    <skill minLevel="59" race="PC_ALL" stigma="true" name="Resonant Strike" skillLevel="1" skillId="1902" classId="CHANTER" />
+    <skill minLevel="63" race="PC_ALL" stigma="true" name="Resonant Strike" skillLevel="1" skillId="1903" classId="CHANTER" />
+    <skill minLevel="55" race="PC_ALL" stigma="true" name="Debilitating Incantation" skillLevel="1" skillId="1904" classId="CHANTER" />
+    <skill minLevel="59" race="PC_ALL" stigma="true" name="Debilitating Incantation" skillLevel="1" skillId="1905" classId="CHANTER" />
+    <skill minLevel="63" race="PC_ALL" stigma="true" name="Debilitating Incantation" skillLevel="1" skillId="1906" classId="CHANTER" />
+    <skill minLevel="55" race="PC_ALL" stigma="true" name="Explosive Exhaust" skillLevel="1" skillId="2852" classId="RIDER" />
+    <skill minLevel="59" race="PC_ALL" stigma="true" name="Explosive Exhaust" skillLevel="1" skillId="2855" classId="RIDER" />
+    <skill minLevel="63" race="PC_ALL" stigma="true" name="Explosive Exhaust" skillLevel="1" skillId="2858" classId="RIDER" />
+    <skill minLevel="55" race="PC_ALL" stigma="true" name="Powerspike Trigger" skillLevel="1" skillId="2861" classId="RIDER" />
+    <skill minLevel="59" race="PC_ALL" stigma="true" name="Powerspike Trigger" skillLevel="1" skillId="2862" classId="RIDER" />
+    <skill minLevel="63" race="PC_ALL" stigma="true" name="Powerspike Trigger" skillLevel="1" skillId="2863" classId="RIDER" />
+    <skill minLevel="55" race="PC_ALL" stigma="true" name="Nerve Pulse" skillLevel="1" skillId="2849" classId="RIDER" />
+    <skill minLevel="59" race="PC_ALL" stigma="true" name="Nerve Pulse" skillLevel="1" skillId="2850" classId="RIDER" />
+    <skill minLevel="63" race="PC_ALL" stigma="true" name="Nerve Pulse" skillLevel="1" skillId="2851" classId="RIDER" />
+    <skill minLevel="55" race="PC_ALL" stigma="true" name="Sequential Fire" skillLevel="1" skillId="2371" classId="GUNNER" />
+    <skill minLevel="59" race="PC_ALL" stigma="true" name="Sequential Fire" skillLevel="1" skillId="2374" classId="GUNNER" />
+    <skill minLevel="63" race="PC_ALL" stigma="true" name="Sequential Fire" skillLevel="1" skillId="2377" classId="GUNNER" />
+    <skill minLevel="55" race="PC_ALL" stigma="true" name="Pursuit Stance" skillLevel="1" skillId="2368" classId="GUNNER" />
+    <skill minLevel="59" race="PC_ALL" stigma="true" name="Pursuit Stance" skillLevel="1" skillId="2369" classId="GUNNER" />
+    <skill minLevel="63" race="PC_ALL" stigma="true" name="Pursuit Stance" skillLevel="1" skillId="2370" classId="GUNNER" />
+    <skill minLevel="55" race="PC_ALL" stigma="true" name="Pulverizer Cannon" skillLevel="1" skillId="2380" classId="GUNNER" />
+    <skill minLevel="59" race="PC_ALL" stigma="true" name="Pulverizer Cannon" skillLevel="1" skillId="2381" classId="GUNNER" />
+    <skill minLevel="63" race="PC_ALL" stigma="true" name="Pulverizer Cannon" skillLevel="1" skillId="2382" classId="GUNNER" />
+    <skill minLevel="55" race="PC_ALL" stigma="true" name="Purging Paean" skillLevel="1" skillId="4483" classId="BARD" />
+    <skill minLevel="55" race="PC_ALL" stigma="true" name="Blazing Requiem" skillLevel="1" skillId="4474" classId="BARD" />
+    <skill minLevel="59" race="PC_ALL" stigma="true" name="Blazing Requiem" skillLevel="1" skillId="4477" classId="BARD" />
+    <skill minLevel="63" race="PC_ALL" stigma="true" name="Blazing Requiem" skillLevel="1" skillId="4480" classId="BARD" />
+    <skill minLevel="55" race="PC_ALL" stigma="true" name="Delusional Dirge" skillLevel="1" skillId="4564" classId="BARD" />
+    <skill minLevel="59" race="PC_ALL" stigma="true" name="Delusional Dirge" skillLevel="1" skillId="4565" classId="BARD" />
+    <skill minLevel="63" race="PC_ALL" stigma="true" name="Delusional Dirge" skillLevel="1" skillId="4566" classId="BARD" />
+
+</linked_skill>

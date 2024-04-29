@@ -239,7 +239,7 @@ public class StigmaService {
         }
 
         checkForLinkStigmaAvailable(player, equippedStigmaId);
-
+        PlayerSkillList skills = player.getSkillList();
         for (Item item : equippedItems) {
             if (item.getItemTemplate().isStigma()) {
                 if (!isPossibleEquippedStigma(player, item)) {
@@ -491,7 +491,7 @@ public class StigmaService {
                 if ((sStigma.size() == 6) && !hasInert) {
                     if (((sStigma.contains(140001152)) && (sStigma.contains(140001138)) && ((sStigma.contains(140001139))
                             || (sStigma.contains(140001141)))) || ((sStigma.contains(140001139)) && (sStigma.contains(140001141)))) {
-                        player.getSkillList().addLinkedSkill(player, 3326, 1);
+                        player.getSkillList().addLinkedSkill(player, 3236, 1);
                     } else if (((sStigma.contains(140001151)) && (sStigma.contains(140001136)) && ((sStigma.contains(140001140))
                             || (sStigma.contains(140001137)))) || ((sStigma.contains(140001140)) && (sStigma.contains(140001137)))) {
                         player.getSkillList().addLinkedSkill(player, 3239, 1);
@@ -523,7 +523,7 @@ public class StigmaService {
                         listSKT.add(DataManager.SKILL_TREE_DATA.getTemplatesForSkill(1340));
                         listSKT.add(DataManager.SKILL_TREE_DATA.getTemplatesForSkill(1341));
                         listSKT.add(DataManager.SKILL_TREE_DATA.getTemplatesForSkill(1342));
-                        for(SkillLearnTemplate[] skf : listSKT){
+                         for(SkillLearnTemplate[] skf : listSKT){
                             for (int i = 0; i < skf.length; i++) {
                                 if(player.getLevel() >= skf[i].getMinLevel()){
                                     player.getSkillList().addLinkedSkill(player, skf[i].getSkillId(), skf[i].getSkillLevel());
