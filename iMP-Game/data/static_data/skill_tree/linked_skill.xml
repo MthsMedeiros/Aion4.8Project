@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<linked_skill>
+<linked_skill xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
     <skill minLevel="55" race="PC_ALL" stigma="true" name="Repulsion Field" skillLevel="1" skillId="1418" classId="SORCERER" />
     <skill minLevel="59" race="PC_ALL" stigma="true" name="Repulsion Field" skillLevel="1" skillId="1419" classId="SORCERER" />
     <skill minLevel="63" race="PC_ALL" stigma="true" name="Repulsion Field" skillLevel="1" skillId="1420" classId="SORCERER" />

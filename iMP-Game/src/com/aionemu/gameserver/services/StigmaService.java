@@ -16,12 +16,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.aionemu.gameserver.dataholders.SkillTreeData;
+import com.aionemu.gameserver.dataholders.loadingutils.LinkedSkillDATA;
 import com.aionemu.gameserver.model.skill.PlayerSkillEntry;
 import com.aionemu.gameserver.model.skill.PlayerSkillList;
 import com.aionemu.gameserver.model.skill.SkillList;
+import com.aionemu.gameserver.skillengine.model.LinkedSkill;
 import com.aionemu.gameserver.skillengine.model.SkillLearnTemplate;
 import com.aionemu.gameserver.skillengine.model.SkillTemplate;
 import com.aionemu.gameserver.taskmanager.parallel.ForEach;
+import com.sun.tools.javac.comp.Todo;
+import com.sun.xml.internal.bind.v2.TODO;
 import gnu.trove.map.hash.TIntObjectHashMap;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -465,12 +469,30 @@ public class StigmaService {
                 if ((sStigma.size() == 6) && !hasInert) {
                     if (((sStigma.contains(140001119)) && (sStigma.contains(140001106)) && ((sStigma.contains(140001108))
                             || (sStigma.contains(140001107)))) || ((sStigma.contains(140001108)) && (sStigma.contains(140001107)))) {
-                        player.getSkillList().addLinkedSkill(player, 641, 1);
+                        List<LinkedSkill> listLinkedSkill = DataManager.LINKED_SKILL_DATA.getLinkedSkillsByName("Unraveling Assault"); ;
+                        for(LinkedSkill linkedSkill : listLinkedSkill){
+                            if((player.getLevel() >= linkedSkill.getMinLevel() && player.getRace().toString().equals(linkedSkill.getRace()) || (player.getLevel() >= linkedSkill.getMinLevel() && linkedSkill.getRace().equals("PC_ALL")))){
+                                player.getSkillList().addLinkedSkill(player, linkedSkill.getSkillId(), linkedSkill.getSkillLevel());
+                            }
+
+                        }
                     } else if (((sStigma.contains(140001118)) && (sStigma.contains(140001104)) && ((sStigma.contains(140001103))
                             || (sStigma.contains(140001105)))) || ((sStigma.contains(140001103)) && (sStigma.contains(140001105)))) {
-                        player.getSkillList().addLinkedSkill(player, 727, 1);
+                        List<LinkedSkill> listLinkedSkill = DataManager.LINKED_SKILL_DATA.getLinkedSkillsByName("Wind Lance"); ;
+                        for(LinkedSkill linkedSkill : listLinkedSkill){
+                            if((player.getLevel() >= linkedSkill.getMinLevel() && player.getRace().toString().equals(linkedSkill.getRace()) || (player.getLevel() >= linkedSkill.getMinLevel() && linkedSkill.getRace().equals("PC_ALL")))){
+                                player.getSkillList().addLinkedSkill(player, linkedSkill.getSkillId(), linkedSkill.getSkillLevel());
+                            }
+
+                        }
                     } else {
-                        player.getSkillList().addLinkedSkill(player, 657, 1);
+                        List<LinkedSkill> listLinkedSkill = DataManager.LINKED_SKILL_DATA.getLinkedSkillsByName("Battle Banner"); ;
+                        for(LinkedSkill linkedSkill : listLinkedSkill){
+                            if((player.getLevel() >= linkedSkill.getMinLevel() && player.getRace().toString().equals(linkedSkill.getRace()) || (player.getLevel() >= linkedSkill.getMinLevel() && linkedSkill.getRace().equals("PC_ALL")))){
+                                player.getSkillList().addLinkedSkill(player, linkedSkill.getSkillId(), linkedSkill.getSkillLevel());
+                            }
+
+                        }
                     }
                 }
                 return;
@@ -478,12 +500,30 @@ public class StigmaService {
                 if ((sStigma.size() == 6) && !hasInert) {
                     if (((sStigma.contains(140001134)) && (sStigma.contains(140001122)) && ((sStigma.contains(140001120))
                             || (sStigma.contains(140001125)))) || ((sStigma.contains(140001120)) && (sStigma.contains(140001125)))) {
-                        player.getSkillList().addLinkedSkill(player, 2919, 1);
+                        List<LinkedSkill> listLinkedSkill = DataManager.LINKED_SKILL_DATA.getLinkedSkillsByName("Invigorating Strike");
+                        for(LinkedSkill linkedSkill : listLinkedSkill){
+                            if((player.getLevel() >= linkedSkill.getMinLevel() && player.getRace().toString().equals(linkedSkill.getRace()) || (player.getLevel() >= linkedSkill.getMinLevel() && linkedSkill.getRace().equals("PC_ALL")))){
+                                player.getSkillList().addLinkedSkill(player, linkedSkill.getSkillId(), linkedSkill.getSkillLevel());
+                            }
+
+                        }
                     } else if (((sStigma.contains(140001135)) && (sStigma.contains(140001123)) && ((sStigma.contains(140001124))
                             || (sStigma.contains(140001121)))) || ((sStigma.contains(140001124)) && (sStigma.contains(140001121)))) {
-                        player.getSkillList().addLinkedSkill(player, 2918, 1);
+                        List<LinkedSkill> listLinkedSkill = DataManager.LINKED_SKILL_DATA.getLinkedSkillsByName("Shield of Vengeance");
+                        for(LinkedSkill linkedSkill : listLinkedSkill){
+                            if((player.getLevel() >= linkedSkill.getMinLevel() && player.getRace().toString().equals(linkedSkill.getRace()) || (player.getLevel() >= linkedSkill.getMinLevel() && linkedSkill.getRace().equals("PC_ALL")))){
+                                player.getSkillList().addLinkedSkill(player, linkedSkill.getSkillId(), linkedSkill.getSkillLevel());
+                            }
+
+                        }
                     } else {
-                        player.getSkillList().addLinkedSkill(player, 2915, 1);
+                        List<LinkedSkill> listLinkedSkill = DataManager.LINKED_SKILL_DATA.getLinkedSkillsByName("Eternal Denial");
+                        for(LinkedSkill linkedSkill : listLinkedSkill){
+                            if((player.getLevel() >= linkedSkill.getMinLevel() && player.getRace().toString().equals(linkedSkill.getRace()) || (player.getLevel() >= linkedSkill.getMinLevel() && linkedSkill.getRace().equals("PC_ALL")))){
+                                player.getSkillList().addLinkedSkill(player, linkedSkill.getSkillId(), linkedSkill.getSkillLevel());
+                            }
+
+                        }
                     }
                 }
                 return;
@@ -491,12 +531,30 @@ public class StigmaService {
                 if ((sStigma.size() == 6) && !hasInert) {
                     if (((sStigma.contains(140001152)) && (sStigma.contains(140001138)) && ((sStigma.contains(140001139))
                             || (sStigma.contains(140001141)))) || ((sStigma.contains(140001139)) && (sStigma.contains(140001141)))) {
-                        player.getSkillList().addLinkedSkill(player, 3236, 1);
+                        List<LinkedSkill> listLinkedSkill = DataManager.LINKED_SKILL_DATA.getLinkedSkillsByName("Shimmerbomb");
+                        for(LinkedSkill linkedSkill : listLinkedSkill){
+                            if((player.getLevel() >= linkedSkill.getMinLevel() && player.getRace().toString().equals(linkedSkill.getRace()) || (player.getLevel() >= linkedSkill.getMinLevel() && linkedSkill.getRace().equals("PC_ALL")))){
+                                player.getSkillList().addLinkedSkill(player, linkedSkill.getSkillId(), linkedSkill.getSkillLevel());
+                            }
+
+                        }
                     } else if (((sStigma.contains(140001151)) && (sStigma.contains(140001136)) && ((sStigma.contains(140001140))
                             || (sStigma.contains(140001137)))) || ((sStigma.contains(140001140)) && (sStigma.contains(140001137)))) {
-                        player.getSkillList().addLinkedSkill(player, 3239, 1);
+                        List<LinkedSkill> listLinkedSkill = DataManager.LINKED_SKILL_DATA.getLinkedSkillsByName("Fangdrop Stab");
+                        for(LinkedSkill linkedSkill : listLinkedSkill){
+                            if((player.getLevel() >= linkedSkill.getMinLevel() && player.getRace().toString().equals(linkedSkill.getRace()) || (player.getLevel() >= linkedSkill.getMinLevel() && linkedSkill.getRace().equals("PC_ALL")))){
+                                player.getSkillList().addLinkedSkill(player, linkedSkill.getSkillId(), linkedSkill.getSkillLevel());
+                            }
+
+                        }
                     } else {
-                        player.getSkillList().addLinkedSkill(player, 3242, 1);
+                        List<LinkedSkill> listLinkedSkill = DataManager.LINKED_SKILL_DATA.getLinkedSkillsByName("Explosive Rebranding");
+                        for(LinkedSkill linkedSkill : listLinkedSkill){
+                            if((player.getLevel() >= linkedSkill.getMinLevel() && player.getRace().toString().equals(linkedSkill.getRace()) || (player.getLevel() >= linkedSkill.getMinLevel() && linkedSkill.getRace().equals("PC_ALL")))){
+                                player.getSkillList().addLinkedSkill(player, linkedSkill.getSkillId(), linkedSkill.getSkillLevel());
+                            }
+
+                        }
                     }
                 }
                 return;
@@ -504,40 +562,65 @@ public class StigmaService {
                 if ((sStigma.size() == 6) && !hasInert) {
                     if (((sStigma.contains(140001172)) && (sStigma.contains(140001155)) && ((sStigma.contains(140001157))
                             || (sStigma.contains(140001153)))) || ((sStigma.contains(140001157)) && (sStigma.contains(140001153)))) {
-                        player.getSkillList().addLinkedSkill(player, 1006, 1);
+                        List<LinkedSkill> listLinkedSkill = DataManager.LINKED_SKILL_DATA.getLinkedSkillsByName("Ripthread Shot");
+                        for(LinkedSkill linkedSkill : listLinkedSkill){
+                            if((player.getLevel() >= linkedSkill.getMinLevel() && player.getRace().toString().equals(linkedSkill.getRace()) || (player.getLevel() >= linkedSkill.getMinLevel() && linkedSkill.getRace().equals("PC_ALL")))){
+                                player.getSkillList().addLinkedSkill(player, linkedSkill.getSkillId(), linkedSkill.getSkillLevel());
+                            }
+
+                        }
                     } else if (((sStigma.contains(140001173)) && (sStigma.contains(140001154)) && ((sStigma.contains(140001158))
                             || (sStigma.contains(140001156)))) || ((sStigma.contains(140001158)) && (sStigma.contains(140001156)))) {
-                        player.getSkillList().addLinkedSkill(player, 936, 1);
+                        List<LinkedSkill> listLinkedSkill = DataManager.LINKED_SKILL_DATA.getLinkedSkillsByName("Night Haze");
+                        for(LinkedSkill linkedSkill : listLinkedSkill){
+                            if((player.getLevel() >= linkedSkill.getMinLevel() && player.getRace().toString().equals(linkedSkill.getRace()) || (player.getLevel() >= linkedSkill.getMinLevel() && linkedSkill.getRace().equals("PC_ALL")))){
+                                player.getSkillList().addLinkedSkill(player, linkedSkill.getSkillId(), linkedSkill.getSkillLevel());
+                            }
+
+                        }
                     } else {
-                        player.getSkillList().addLinkedSkill(player, 1061, 1);
+                        List<LinkedSkill> listLinkedSkill = DataManager.LINKED_SKILL_DATA.getLinkedSkillsByName("Staggering Trap");
+                        for(LinkedSkill linkedSkill : listLinkedSkill){
+                            if((player.getLevel() >= linkedSkill.getMinLevel() && player.getRace().toString().equals(linkedSkill.getRace()) || (player.getLevel() >= linkedSkill.getMinLevel() && linkedSkill.getRace().equals("PC_ALL")))){
+                                player.getSkillList().addLinkedSkill(player, linkedSkill.getSkillId(), linkedSkill.getSkillLevel());
+                            }
+
+                        }
                     }
                 }
                 return;
             case SORCERER:
                 if ((sStigma.size() == 6) && !hasInert) {
 
-
+                    //TODO arrumar esse codigo pra puxar do linkedskill.xml
                     if (((sStigma.contains(140001191)) && (sStigma.contains(140001174)) && ((sStigma.contains(140001181))
                             || (sStigma.contains(140001178)))) || ((sStigma.contains(140001181)) && (sStigma.contains(140001178)))) {
-                        List<SkillLearnTemplate[]> listSKT = new ArrayList<>();
-                        listSKT.add(DataManager.SKILL_TREE_DATA.getTemplatesForSkill(1340));
-                        listSKT.add(DataManager.SKILL_TREE_DATA.getTemplatesForSkill(1341));
-                        listSKT.add(DataManager.SKILL_TREE_DATA.getTemplatesForSkill(1342));
-                         for(SkillLearnTemplate[] skf : listSKT){
-                            for (int i = 0; i < skf.length; i++) {
-                                if(player.getLevel() >= skf[i].getMinLevel()){
-                                    player.getSkillList().addLinkedSkill(player, skf[i].getSkillId(), skf[i].getSkillLevel());
-                                }
+                        List<LinkedSkill> listLinkedSkill = DataManager.LINKED_SKILL_DATA.getLinkedSkillsByName("Slumberswept Wind"); ;
+                         for(LinkedSkill linkedSkill : listLinkedSkill){
+                                if((player.getLevel() >= linkedSkill.getMinLevel() && player.getRace().toString().equals(linkedSkill.getRace()) || (player.getLevel() >= linkedSkill.getMinLevel() && linkedSkill.getRace().equals("PC_ALL")))){
+                                    player.getSkillList().addLinkedSkill(player, linkedSkill.getSkillId(), linkedSkill.getSkillLevel());
                             }
-                            
+
                         }
-                        
+
 
                     } else if (((sStigma.contains(140001192)) && (sStigma.contains(140001176)) && ((sStigma.contains(140001177))
                             || (sStigma.contains(140001184)))) || ((sStigma.contains(140001177)) && (sStigma.contains(140001184)))) {
-                        player.getSkillList().addLinkedSkill(player, 1540, 1);
+                        List<LinkedSkill> listLinkedSkill = DataManager.LINKED_SKILL_DATA.getLinkedSkillsByName("Aetherblaze"); ;
+                        for(LinkedSkill linkedSkill : listLinkedSkill){
+                            if((player.getLevel() >= linkedSkill.getMinLevel() && player.getRace().toString().equals(linkedSkill.getRace()) || (player.getLevel() >= linkedSkill.getMinLevel() && linkedSkill.getRace().equals("PC_ALL")))){
+                                player.getSkillList().addLinkedSkill(player, linkedSkill.getSkillId(), linkedSkill.getSkillLevel());
+                            }
+
+                        }
                     } else {
-                        player.getSkillList().addLinkedSkill(player, 1418, 1);
+                        List<LinkedSkill> listLinkedSkill = DataManager.LINKED_SKILL_DATA.getLinkedSkillsByName("Repulsion Field"); ;
+                        for(LinkedSkill linkedSkill : listLinkedSkill){
+                            if((player.getLevel() >= linkedSkill.getMinLevel() && player.getRace().toString().equals(linkedSkill.getRace()) || (player.getLevel() >= linkedSkill.getMinLevel() && linkedSkill.getRace().equals("PC_ALL")))){
+                                player.getSkillList().addLinkedSkill(player, linkedSkill.getSkillId(), linkedSkill.getSkillLevel());
+                            }
+
+                        }
                     }
                 }
                 return;
@@ -545,12 +628,30 @@ public class StigmaService {
                 if ((sStigma.size() == 6) && !hasInert) {
                     if (((sStigma.contains(140001209)) && (sStigma.contains(140001195)) && ((sStigma.contains(140001193))
                             || (sStigma.contains(140001194)))) || ((sStigma.contains(140001193)) && (sStigma.contains(140001194)))) {
-                        player.getSkillList().addLinkedSkill(player, 3541, 1);
+                        List<LinkedSkill> listLinkedSkill = DataManager.LINKED_SKILL_DATA.getLinkedSkillsByName("Spirit's Empowerment");
+                        for(LinkedSkill linkedSkill : listLinkedSkill){
+                            if((player.getLevel() >= linkedSkill.getMinLevel() && player.getRace().toString().equals(linkedSkill.getRace()) || (player.getLevel() >= linkedSkill.getMinLevel() && linkedSkill.getRace().equals("PC_ALL")))){
+                                player.getSkillList().addLinkedSkill(player, linkedSkill.getSkillId(), linkedSkill.getSkillLevel());
+                            }
+
+                        }
                     } else if (((sStigma.contains(140001210)) && (sStigma.contains(140001199)) && ((sStigma.contains(140001197))
                             || (sStigma.contains(140001196)))) || ((sStigma.contains(140001197)) && (sStigma.contains(140001196)))) {
-                        player.getSkillList().addLinkedSkill(player, 3549, 1);
+                        List<LinkedSkill> listLinkedSkill = DataManager.LINKED_SKILL_DATA.getLinkedSkillsByName("Command: Absorb Wounds");
+                        for(LinkedSkill linkedSkill : listLinkedSkill){
+                            if((player.getLevel() >= linkedSkill.getMinLevel() && player.getRace().toString().equals(linkedSkill.getRace()) || (player.getLevel() >= linkedSkill.getMinLevel() && linkedSkill.getRace().equals("PC_ALL")))){
+                                player.getSkillList().addLinkedSkill(player, linkedSkill.getSkillId(), linkedSkill.getSkillLevel());
+                            }
+
+                        }
                     } else {
-                        player.getSkillList().addLinkedSkill(player, 3849, 1);
+                        List<LinkedSkill> listLinkedSkill = DataManager.LINKED_SKILL_DATA.getLinkedSkillsByName("Blood Funnel");
+                        for(LinkedSkill linkedSkill : listLinkedSkill){
+                            if((player.getLevel() >= linkedSkill.getMinLevel() && player.getRace().toString().equals(linkedSkill.getRace()) || (player.getLevel() >= linkedSkill.getMinLevel() && linkedSkill.getRace().equals("PC_ALL")))){
+                                player.getSkillList().addLinkedSkill(player, linkedSkill.getSkillId(), linkedSkill.getSkillLevel());
+                            }
+
+                        }
                     }
                 }
                 return;
@@ -558,12 +659,30 @@ public class StigmaService {
                 if ((sStigma.size() == 6) && !hasInert) {
                     if (((sStigma.contains(140001246)) && (sStigma.contains(140001234)) && ((sStigma.contains(140001232))
                             || (sStigma.contains(140001233)))) || ((sStigma.contains(140001232)) && (sStigma.contains(140001233)))) {
-                        player.getSkillList().addLinkedSkill(player, 3932, 1);
+                        List<LinkedSkill> listLinkedSkill = DataManager.LINKED_SKILL_DATA.getLinkedSkillsByName("Restoration Relief ");
+                        for(LinkedSkill linkedSkill : listLinkedSkill){
+                            if((player.getLevel() >= linkedSkill.getMinLevel() && player.getRace().toString().equals(linkedSkill.getRace()) || (player.getLevel() >= linkedSkill.getMinLevel() && linkedSkill.getRace().equals("PC_ALL")))){
+                                player.getSkillList().addLinkedSkill(player, linkedSkill.getSkillId(), linkedSkill.getSkillLevel());
+                            }
+
+                        }
                     } else if (((sStigma.contains(140001245)) && (sStigma.contains(140001229)) && ((sStigma.contains(140001228))
                             || (sStigma.contains(140001230)))) || ((sStigma.contains(140001228)) && (sStigma.contains(140001230)))) {
-                        player.getSkillList().addLinkedSkill(player, 4167, 1);
+                        List<LinkedSkill> listLinkedSkill = DataManager.LINKED_SKILL_DATA.getLinkedSkillsByName("Judge's Edict");
+                        for(LinkedSkill linkedSkill : listLinkedSkill){
+                            if((player.getLevel() >= linkedSkill.getMinLevel() && player.getRace().toString().equals(linkedSkill.getRace()) || (player.getLevel() >= linkedSkill.getMinLevel() && linkedSkill.getRace().equals("PC_ALL")))){
+                                player.getSkillList().addLinkedSkill(player, linkedSkill.getSkillId(), linkedSkill.getSkillLevel());
+                            }
+
+                        }
                     } else {
-                        player.getSkillList().addLinkedSkill(player, 3906, 1);
+                        List<LinkedSkill> listLinkedSkill = DataManager.LINKED_SKILL_DATA.getLinkedSkillsByName("Summon Vexing Energy");
+                        for(LinkedSkill linkedSkill : listLinkedSkill){
+                            if((player.getLevel() >= linkedSkill.getMinLevel() && player.getRace().toString().equals(linkedSkill.getRace()) || (player.getLevel() >= linkedSkill.getMinLevel() && linkedSkill.getRace().equals("PC_ALL")))){
+                                player.getSkillList().addLinkedSkill(player, linkedSkill.getSkillId(), linkedSkill.getSkillLevel());
+                            }
+
+                        }
                     }
                 }
                 return;
@@ -571,12 +690,30 @@ public class StigmaService {
                 if ((sStigma.size() == 6) && !hasInert) {
                     if (((sStigma.contains(140001226)) && (sStigma.contains(140001212)) && ((sStigma.contains(140001213))
                             || (sStigma.contains(140001211)))) || ((sStigma.contains(140001213)) && (sStigma.contains(140001211)))) {
-                        player.getSkillList().addLinkedSkill(player, 1907, 1);
+                        List<LinkedSkill> listLinkedSkill = DataManager.LINKED_SKILL_DATA.getLinkedSkillsByName("Word of Instigation");
+                        for(LinkedSkill linkedSkill : listLinkedSkill){
+                            if((player.getLevel() >= linkedSkill.getMinLevel() && player.getRace().toString().equals(linkedSkill.getRace()) || (player.getLevel() >= linkedSkill.getMinLevel() && linkedSkill.getRace().equals("PC_ALL")))){
+                                player.getSkillList().addLinkedSkill(player, linkedSkill.getSkillId(), linkedSkill.getSkillLevel());
+                            }
+
+                        }
                     } else if (((sStigma.contains(140001227)) && (sStigma.contains(140001214)) && ((sStigma.contains(140001216))
                             || (sStigma.contains(140001215)))) || ((sStigma.contains(140001216)) && (sStigma.contains(140001215)))) {
-                        player.getSkillList().addLinkedSkill(player, 1901, 1);
+                        List<LinkedSkill> listLinkedSkill = DataManager.LINKED_SKILL_DATA.getLinkedSkillsByName("Resonant Strike");
+                        for(LinkedSkill linkedSkill : listLinkedSkill){
+                            if((player.getLevel() >= linkedSkill.getMinLevel() && player.getRace().toString().equals(linkedSkill.getRace()) || (player.getLevel() >= linkedSkill.getMinLevel() && linkedSkill.getRace().equals("PC_ALL")))){
+                                player.getSkillList().addLinkedSkill(player, linkedSkill.getSkillId(), linkedSkill.getSkillLevel());
+                            }
+
+                        }
                     } else {
-                        player.getSkillList().addLinkedSkill(player, 1904, 1);
+                        List<LinkedSkill> listLinkedSkill = DataManager.LINKED_SKILL_DATA.getLinkedSkillsByName("Debilitating Incantation");
+                        for(LinkedSkill linkedSkill : listLinkedSkill){
+                            if((player.getLevel() >= linkedSkill.getMinLevel() && player.getRace().toString().equals(linkedSkill.getRace()) || (player.getLevel() >= linkedSkill.getMinLevel() && linkedSkill.getRace().equals("PC_ALL")))){
+                                player.getSkillList().addLinkedSkill(player, linkedSkill.getSkillId(), linkedSkill.getSkillLevel());
+                            }
+
+                        }
                     }
                 }
                 return;
@@ -584,12 +721,30 @@ public class StigmaService {
                 if ((sStigma.size() == 6) && !hasInert) {
                     if (((sStigma.contains(140001279)) && (sStigma.contains(140001264)) && ((sStigma.contains(140001269))
                             || (sStigma.contains(140001265)))) || ((sStigma.contains(140001269)) && (sStigma.contains(140001265)))) {
-                        player.getSkillList().addLinkedSkill(player, 2852, 1);
+                        List<LinkedSkill> listLinkedSkill = DataManager.LINKED_SKILL_DATA.getLinkedSkillsByName("Explosive Exhaust");
+                        for(LinkedSkill linkedSkill : listLinkedSkill){
+                            if((player.getLevel() >= linkedSkill.getMinLevel() && player.getRace().toString().equals(linkedSkill.getRace()) || (player.getLevel() >= linkedSkill.getMinLevel() && linkedSkill.getRace().equals("PC_ALL")))){
+                                player.getSkillList().addLinkedSkill(player, linkedSkill.getSkillId(), linkedSkill.getSkillLevel());
+                            }
+
+                        }
                     } else if (((sStigma.contains(140001280)) && (sStigma.contains(140001266)) && ((sStigma.contains(140001268))
                             || (sStigma.contains(140001267)))) || ((sStigma.contains(140001268)) && (sStigma.contains(140001267)))) {
-                        player.getSkillList().addLinkedSkill(player, 2861, 1);
+                        List<LinkedSkill> listLinkedSkill = DataManager.LINKED_SKILL_DATA.getLinkedSkillsByName("Powerspike Trigger");
+                        for(LinkedSkill linkedSkill : listLinkedSkill){
+                            if((player.getLevel() >= linkedSkill.getMinLevel() && player.getRace().toString().equals(linkedSkill.getRace()) || (player.getLevel() >= linkedSkill.getMinLevel() && linkedSkill.getRace().equals("PC_ALL")))){
+                                player.getSkillList().addLinkedSkill(player, linkedSkill.getSkillId(), linkedSkill.getSkillLevel());
+                            }
+
+                        }
                     } else {
-                        player.getSkillList().addLinkedSkill(player, 2849, 1);
+                        List<LinkedSkill> listLinkedSkill = DataManager.LINKED_SKILL_DATA.getLinkedSkillsByName("Nerve Pulse");
+                        for(LinkedSkill linkedSkill : listLinkedSkill){
+                            if((player.getLevel() >= linkedSkill.getMinLevel() && player.getRace().toString().equals(linkedSkill.getRace()) || (player.getLevel() >= linkedSkill.getMinLevel() && linkedSkill.getRace().equals("PC_ALL")))){
+                                player.getSkillList().addLinkedSkill(player, linkedSkill.getSkillId(), linkedSkill.getSkillLevel());
+                            }
+
+                        }
                     }
                 }
                 return;
@@ -597,12 +752,30 @@ public class StigmaService {
                 if ((sStigma.size() == 6) && !hasInert) {
                     if (((sStigma.contains(140001262)) && (sStigma.contains(140001249)) && ((sStigma.contains(140001247))
                             || (sStigma.contains(140001248)))) || ((sStigma.contains(140001247)) && (sStigma.contains(140001248)))) {
-                        player.getSkillList().addLinkedSkill(player, 2368, 1);
+                        List<LinkedSkill> listLinkedSkill = DataManager.LINKED_SKILL_DATA.getLinkedSkillsByName("Pursuit Stance");
+                        for(LinkedSkill linkedSkill : listLinkedSkill){
+                            if((player.getLevel() >= linkedSkill.getMinLevel() && player.getRace().toString().equals(linkedSkill.getRace()) || (player.getLevel() >= linkedSkill.getMinLevel() && linkedSkill.getRace().equals("PC_ALL")))){
+                                player.getSkillList().addLinkedSkill(player, linkedSkill.getSkillId(), linkedSkill.getSkillLevel());
+                            }
+
+                        }
                     } else if (((sStigma.contains(140001263)) && (sStigma.contains(140001251)) && ((sStigma.contains(140001252))
                             || (sStigma.contains(140001250)))) || ((sStigma.contains(140001252)) && (sStigma.contains(140001250)))) {
-                        player.getSkillList().addLinkedSkill(player, 2371, 1);
+                        List<LinkedSkill> listLinkedSkill = DataManager.LINKED_SKILL_DATA.getLinkedSkillsByName("Sequential Fire");
+                        for(LinkedSkill linkedSkill : listLinkedSkill){
+                            if((player.getLevel() >= linkedSkill.getMinLevel() && player.getRace().toString().equals(linkedSkill.getRace()) || (player.getLevel() >= linkedSkill.getMinLevel() && linkedSkill.getRace().equals("PC_ALL")))){
+                                player.getSkillList().addLinkedSkill(player, linkedSkill.getSkillId(), linkedSkill.getSkillLevel());
+                            }
+
+                        }
                     } else {
-                        player.getSkillList().addLinkedSkill(player, 2380, 1);
+                        List<LinkedSkill> listLinkedSkill = DataManager.LINKED_SKILL_DATA.getLinkedSkillsByName("Pulverizer Cannon");
+                        for(LinkedSkill linkedSkill : listLinkedSkill){
+                            if((player.getLevel() >= linkedSkill.getMinLevel() && player.getRace().toString().equals(linkedSkill.getRace()) || (player.getLevel() >= linkedSkill.getMinLevel() && linkedSkill.getRace().equals("PC_ALL")))){
+                                player.getSkillList().addLinkedSkill(player, linkedSkill.getSkillId(), linkedSkill.getSkillLevel());
+                            }
+
+                        }
                     }
                 }
                 return;
@@ -610,12 +783,30 @@ public class StigmaService {
                 if ((sStigma.size() == 6) && !hasInert) {
                     if (((sStigma.contains(140001297)) && (sStigma.contains(140001285)) && ((sStigma.contains(140001283))
                             || (sStigma.contains(140001286)))) || ((sStigma.contains(140001283)) && (sStigma.contains(140001286)))) {
-                        player.getSkillList().addLinkedSkill(player, 4483, 1);
+                        List<LinkedSkill> listLinkedSkill = DataManager.LINKED_SKILL_DATA.getLinkedSkillsByName("Purging Paean");
+                        for(LinkedSkill linkedSkill : listLinkedSkill){
+                            if((player.getLevel() >= linkedSkill.getMinLevel() && player.getRace().toString().equals(linkedSkill.getRace()) || (player.getLevel() >= linkedSkill.getMinLevel() && linkedSkill.getRace().equals("PC_ALL")))){
+                                player.getSkillList().addLinkedSkill(player, linkedSkill.getSkillId(), linkedSkill.getSkillLevel());
+                            }
+
+                        }
                     } else if (((sStigma.contains(140001296)) && (sStigma.contains(140001281)) && ((sStigma.contains(140001284))
                             || (sStigma.contains(140001282)))) || ((sStigma.contains(140001284)) && (sStigma.contains(140001282)))) {
-                        player.getSkillList().addLinkedSkill(player, 4474, 1);
+                        List<LinkedSkill> listLinkedSkill = DataManager.LINKED_SKILL_DATA.getLinkedSkillsByName("Blazing Requiem");
+                        for(LinkedSkill linkedSkill : listLinkedSkill){
+                            if((player.getLevel() >= linkedSkill.getMinLevel() && player.getRace().toString().equals(linkedSkill.getRace()) || (player.getLevel() >= linkedSkill.getMinLevel() && linkedSkill.getRace().equals("PC_ALL")))){
+                                player.getSkillList().addLinkedSkill(player, linkedSkill.getSkillId(), linkedSkill.getSkillLevel());
+                            }
+
+                        }
                     } else {
-                        player.getSkillList().addLinkedSkill(player, 4564, 1);
+                        List<LinkedSkill> listLinkedSkill = DataManager.LINKED_SKILL_DATA.getLinkedSkillsByName("Delusional Dirge");
+                        for(LinkedSkill linkedSkill : listLinkedSkill){
+                            if((player.getLevel() >= linkedSkill.getMinLevel() && player.getRace().toString().equals(linkedSkill.getRace()) || (player.getLevel() >= linkedSkill.getMinLevel() && linkedSkill.getRace().equals("PC_ALL")))){
+                                player.getSkillList().addLinkedSkill(player, linkedSkill.getSkillId(), linkedSkill.getSkillLevel());
+                            }
+
+                        }
                     }
                 }
                 return;

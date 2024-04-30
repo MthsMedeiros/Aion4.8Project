@@ -69,8 +69,7 @@ public class StaticData {
     public MotionData motionData;
     @XmlElement(name = "skill_tree")
     public SkillTreeData skillTreeData;
-    @XmlElement(name="linked_skill")
-    LinkedSkillDATA linkedSkillData;
+
     @XmlElement(name = "cube_expander")
     public CubeExpandData cubeExpandData;
     @XmlElement(name = "warehouse_expander")
@@ -222,7 +221,8 @@ public class StaticData {
     public MultiReturnItemData multiReturnItemData;		
     @XmlElement(name = "battlegrounds")
     public BattleGroundData battlegroundData;
-
+    @XmlElement(name="linked_skill")
+    public LinkedSkillDATA linkedSkillData;
     // JAXB callback
     @SuppressWarnings("unused")
     private void afterUnmarshal(Unmarshaller unmarshaller, Object parent) {

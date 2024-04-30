@@ -17,6 +17,7 @@ import com.aionemu.commons.utils.GenericValidator;
 import com.aionemu.gameserver.dao.MySQL5DAOUtils;
 import com.aionemu.gameserver.dao.PlayerSkillListDAO;
 import com.aionemu.gameserver.dataholders.DataManager;
+import com.aionemu.gameserver.dataholders.loadingutils.LinkedSkillDATA;
 import com.aionemu.gameserver.model.gameobjects.PersistentState;
 import com.aionemu.gameserver.model.gameobjects.player.Player;
 import com.aionemu.gameserver.model.skill.PlayerSkillEntry;
@@ -78,11 +79,11 @@ public class MySQL5PlayerSkillListDAO extends PlayerSkillListDAO {
             while (rset.next()) {
                 int id = rset.getInt("skill_id");
                 int lv = rset.getInt("skill_level");
-                if (DataManager.LINKED_SKILL_DATA.doesSkillExist(id)) {
-                    skills.add(new PlayerSkillEntry(id, false, true, lv, PersistentState.UPDATED));
-                } else {
-                    skills.add(new PlayerSkillEntry(id, false, false, lv, PersistentState.UPDATED));
-                }
+
+                skills.add(new PlayerSkillEntry(id, false, DataManager.LINKED_SKILL_DATA.doesSkillExist(id), lv, PersistentState.UPDATED));
+
+
+
             }
             rset.close();
             stmt.close();

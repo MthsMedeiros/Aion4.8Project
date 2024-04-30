@@ -2,33 +2,31 @@ package com.aionemu.gameserver.skillengine.model;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAttribute;
 import java.util.List;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 public class LinkedSkill {
 
-    public List<LinkedSkill> getListLinkedSkills() {
-        return listLinkedSkills;
-    }
-
-    public void setListLinkedSkills(List<LinkedSkill> listLinkedSkills) {
-        this.listLinkedSkills = listLinkedSkills;
-    }
-
-    List<LinkedSkill> listLinkedSkills;
-
+   @XmlAttribute(name="minLevel", required = true)
     private int minLevel;
 
+    @XmlAttribute(name="race", required = true)
     private String race;
 
-    private Boolean stigma;
+    @XmlAttribute
+    private Boolean stigma=false;
 
+    @XmlAttribute(name="name", required = true)
     private String name;
 
+    @XmlAttribute(name="skillLevel", required = true)
     private int skillLevel;
 
+    @XmlAttribute(name="skillId", required = true)
     private int skillId;
 
+    @XmlAttribute(name="classId", required = true)
     private String classID;
 
     public int getMinLevel() {

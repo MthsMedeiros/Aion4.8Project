@@ -57,6 +57,7 @@ public final class DataManager {
     public static ItemRandomBonusData ITEM_RANDOM_BONUSES;
     public static TitleData TITLE_DATA;
     public static PlayerInitialData PLAYER_INITIAL_DATA;
+
     public static SkillData SKILL_DATA;
     public static MotionData MOTION_DATA;
     public static SkillTreeData SKILL_TREE_DATA;
